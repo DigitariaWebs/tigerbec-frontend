@@ -1,0 +1,278 @@
+[
+  {
+    "id": 1,
+    "question": "What is Tigerbec Canada Trust?",
+    "answer": "Tigerbec Canada Trust is a comprehensive vehicle inventory management and sales platform. It helps dealerships and automotive businesses manage stock, track profits, analyze sales performance, and streamline customer management all in one place.",
+    "category": "General"
+  },
+  {
+    "id": 2,
+    "question": "How do I get started with Tigerbec Canada Trust?",
+    "answer": "Sign up for an account, configure your dealership information, and add your vehicle inventory. Our onboarding team will guide you through the setup process and help you customize the platform for your business needs.",
+    "category": "General"
+  },
+  {
+    "id": 3,
+    "question": "Do you offer a free trial?",
+    "answer": "Yes, we offer a 30-day free trial with full access to all features. No credit card required, and you can manage unlimited vehicles during the trial period.",
+    "category": "General"
+  },
+  {
+    "id": 4,
+    "question": "What browsers are supported?",
+    "answer": "We support all modern browsers including Chrome, Firefox, Safari, and Edge. For optimal performance with large vehicle inventories, we recommend the latest version of your browser.",
+    "category": "General"
+  },
+  {
+    "id": 5,
+    "question": "How do I contact support?",
+    "answer": "You can reach our support team via email, live chat, or phone. We're available Monday-Friday 9 AM-6 PM for standard support, with emergency support available 24/7 for critical issues.",
+    "category": "General"
+  },
+  {
+    "id": 6,
+    "question": "Is there a mobile app available?",
+    "answer": "Yes, our mobile app is available for iOS and Android. You can manage your inventory, track sales, and view analytics on the go from any device.",
+    "category": "General"
+  },
+  {
+    "id": 7,
+    "question": "Can I customize my dashboard?",
+    "answer": "Absolutely. You can customize your dashboard to display the metrics most important to your business - whether it's inventory levels, profit margins, sales targets, or customer data.",
+    "category": "General"
+  },
+  {
+    "id": 8,
+    "question": "What integrations are available?",
+    "answer": "We integrate with popular services like Stripe, PayPal, Google Analytics, and major automotive industry platforms. Custom integrations are available for Enterprise customers.",
+    "category": "General"
+  },
+  {
+    "id": 9,
+    "question": "How do I reset my password?",
+    "answer": "Click the 'Forgot Password' link on the login page, enter your email, and we'll send you a password reset link. You can set a new password within 24 hours.",
+    "category": "Account"
+  },
+  {
+    "id": 10,
+    "question": "How do I change my email address?",
+    "answer": "Go to your account settings and update your email in the 'User Profile' section. Verify your new email address to complete the change.",
+    "category": "Account"
+  },
+  {
+    "id": 11,
+    "question": "Can I add team members to manage inventory?",
+    "answer": "Yes, you can invite team members and assign roles (Manager, Salesperson, Admin, Viewer) with specific permissions. Control what each team member can access and modify.",
+    "category": "Account"
+  },
+  {
+    "id": 12,
+    "question": "How do I delete my account?",
+    "answer": "To delete your account, go to account settings and select 'Delete Account'. Please note this action is irreversible and all data will be permanently removed after 30 days.",
+    "category": "Account"
+  },
+  {
+    "id": 13,
+    "question": "Can I change my username?",
+    "answer": "Yes, you can change your username in your account settings. The change is instant and applies across all your dealership management tools.",
+    "category": "Account"
+  },
+  {
+    "id": 14,
+    "question": "How do I enable two-factor authentication?",
+    "answer": "Enable 2FA in your security settings for extra protection. We support SMS and authenticator apps for a secure login process.",
+    "category": "Account"
+  },
+  {
+    "id": 15,
+    "question": "What payment methods do you accept?",
+    "answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All transactions are secure.",
+    "category": "Billing"
+  },
+  {
+    "id": 16,
+    "question": "How can I upgrade my plan?",
+    "answer": "Upgrade anytime from your billing settings. You'll have immediate access to new features, and your billing will be adjusted proportionally.",
+    "category": "Billing"
+  },
+  {
+    "id": 17,
+    "question": "Can I downgrade my plan?",
+    "answer": "Yes, you can downgrade at any time. The change takes effect on your next billing date. Any credits are applied to your account.",
+    "category": "Billing"
+  },
+  {
+    "id": 18,
+    "question": "Do you offer refunds?",
+    "answer": "We offer a 30-day money-back guarantee. If you're not satisfied with Tigerbec Canada Trust, contact support for a full refund within 30 days of purchase.",
+    "category": "Billing"
+  },
+  {
+    "id": 19,
+    "question": "How does billing work?",
+    "answer": "Choose monthly or annual billing. You'll receive an invoice each billing cycle, and payment is automatically processed on your chosen date.",
+    "category": "Billing"
+  },
+  {
+    "id": 20,
+    "question": "Can I switch between monthly and annual billing?",
+    "answer": "Yes, switch anytime from your billing settings. Annual plans offer 20% savings compared to monthly billing.",
+    "category": "Billing"
+  },
+  {
+    "id": 21,
+    "question": "What happens if a payment fails?",
+    "answer": "We'll retry payment after 3 days. You'll receive email notifications, and your account remains active during the grace period.",
+    "category": "Billing"
+  },
+  {
+    "id": 22,
+    "question": "How do I view my billing history?",
+    "answer": "Access your complete billing history in the 'Billing' section of your account settings. Download invoices and receipts anytime.",
+    "category": "Billing"
+  },
+  {
+    "id": 23,
+    "question": "How do I add vehicles to my inventory?",
+    "answer": "You can manually add vehicles, bulk import via CSV, or connect directly from auction platforms. Include details like make, model, year, VIN, condition, and pricing.",
+    "category": "Inventory"
+  },
+  {
+    "id": 24,
+    "question": "Can I track vehicle history and maintenance?",
+    "answer": "Yes, maintain a complete history for each vehicle including inspections, repairs, service records, and mileage. This helps with resale value assessment.",
+    "category": "Inventory"
+  },
+  {
+    "id": 25,
+    "question": "How do I manage vehicle pricing?",
+    "answer": "Set pricing rules based on make, model, condition, and market trends. The system suggests competitive pricing based on real-time market data.",
+    "category": "Inventory"
+  },
+  {
+    "id": 26,
+    "question": "Can I track inventory across multiple locations?",
+    "answer": "Yes, manage unlimited dealership locations from a single account. Track inventory, sales, and performance separately for each location.",
+    "category": "Inventory"
+  },
+  {
+    "id": 27,
+    "question": "How do I receive alerts for low stock?",
+    "answer": "Set custom alerts for inventory levels, price changes, or expiring listings. Get notified via email or dashboard when action is needed.",
+    "category": "Inventory"
+  },
+  {
+    "id": 28,
+    "question": "How does the profit analysis work?",
+    "answer": "View detailed profit reports by vehicle, salesperson, month, or category. Analyze margins, costs, and revenue with real-time dashboards.",
+    "category": "Analytics"
+  },
+  {
+    "id": 29,
+    "question": "What sales metrics can I track?",
+    "answer": "Track total sales, average selling price, days to sell, conversion rates, and salesperson performance. Generate custom reports for any time period.",
+    "category": "Analytics"
+  },
+  {
+    "id": 30,
+    "question": "Can I forecast future sales?",
+    "answer": "Yes, use historical data and market trends to forecast sales. The AI-powered insights help you anticipate demand and optimize inventory.",
+    "category": "Analytics"
+  },
+  {
+    "id": 31,
+    "question": "How do I export reports?",
+    "answer": "Export analytics and reports in CSV, PDF, or Excel formats. Schedule automated reports to be sent to your email weekly or monthly.",
+    "category": "Analytics"
+  },
+  {
+    "id": 32,
+    "question": "Can I manage customer leads?",
+    "answer": "Yes, capture and manage customer leads from multiple sources. Track lead status, assign to salespeople, and monitor conversion rates.",
+    "category": "CRM"
+  },
+  {
+    "id": 33,
+    "question": "How do I track customer interactions?",
+    "answer": "Log calls, emails, and test drives. The system maintains a complete interaction history for each customer to ensure personalized service.",
+    "category": "CRM"
+  },
+  {
+    "id": 34,
+    "question": "Can I send automated communications?",
+    "answer": "Yes, send automated emails or SMS for follow-ups, appointment reminders, and promotional messages. Customize templates for your dealership.",
+    "category": "CRM"
+  },
+  {
+    "id": 35,
+    "question": "How secure is my dealership data?",
+    "answer": "We use bank-level security with AES-256 encryption, TLS 1.3 for data in transit, and regular security audits. Compliance with industry standards is guaranteed.",
+    "category": "Security"
+  },
+  {
+    "id": 36,
+    "question": "Is my inventory data backed up?",
+    "answer": "Yes, all data is automatically backed up daily. You can restore from any backup point within the last 30 days if needed.",
+    "category": "Security"
+  },
+  {
+    "id": 37,
+    "question": "How do you handle data privacy?",
+    "answer": "We comply with GDPR, CCPA, and other privacy regulations. Your customer and business data is never shared with third parties without explicit consent.",
+    "category": "Security"
+  },
+  {
+    "id": 38,
+    "question": "Does the system support role-based access control?",
+    "answer": "Yes, assign specific roles to team members with granular permissions. Managers can approve sales, admins manage users, and salespeople focus on sales.",
+    "category": "Security"
+  },
+  {
+    "id": 39,
+    "question": "Can I audit user activity?",
+    "answer": "Yes, view audit logs showing who accessed what data, when changes were made, and what was modified. This ensures transparency and accountability.",
+    "category": "Security"
+  },
+  {
+    "id": 40,
+    "question": "What about system maintenance windows?",
+    "answer": "We perform maintenance during low-traffic hours (typically Sundays 2-4 AM UTC). You'll be notified 48 hours in advance of any scheduled maintenance.",
+    "category": "Support"
+  },
+  {
+    "id": 41,
+    "question": "What training and onboarding do you provide?",
+    "answer": "We offer comprehensive onboarding, video tutorials, documentation, and live training sessions. Enterprise customers get dedicated support specialists.",
+    "category": "Support"
+  },
+  {
+    "id": 42,
+    "question": "How quickly will I get support help?",
+    "answer": "Response times: Basic (24 hours), Professional (12 hours), Enterprise (2 hours). Critical issues are prioritized and handled immediately.",
+    "category": "Support"
+  },
+  {
+    "id": 43,
+    "question": "Is there integration with accounting software?",
+    "answer": "Yes, we integrate with QuickBooks, FreshBooks, and other popular accounting platforms to streamline financial reporting and bookkeeping.",
+    "category": "Integrations"
+  },
+  {
+    "id": 44,
+    "question": "Can I integrate with third-party tools?",
+    "answer": "Yes, we offer REST APIs and webhooks for custom integrations. Enterprise customers get dedicated technical support for complex implementations.",
+    "category": "Integrations"
+  },
+  {
+    "id": 45,
+    "question": "Do you have an API for vehicle listings?",
+    "answer": "Yes, our API allows you to push vehicle listings to multiple platforms, manage prices remotely, and sync inventory across channels automatically.",
+    "category": "Integrations"
+  },
+  {
+    "id": 46,
+    "question": "What happens if I need help with complex workflows?",
+    "answer": "Enterprise customers have access to our professional services team for custom workflows, process optimization, and business consulting tailored to your dealership.",
+    "category": "Support"
+  }
+]
