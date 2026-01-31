@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
   },
-  
+
   // Turbopack configuration
   turbopack: {
     rules: {
@@ -14,22 +14,23 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  
+
   // Set the correct workspace root
-  outputFileTracingRoot: require('path').join(__dirname, '../'),
-  
+  // Set the correct workspace root
+  // outputFileTracingRoot: require('path').join(__dirname, '../'),
+
   // Image optimization
   images: {
     domains: ['ui.shadcn.com', 'images.unsplash.com', 'xqqbnlsmqrgwgscuigwi.supabase.co'],
     formats: ['image/webp', 'image/avif'],
   },
-  
+
   // Webpack configuration
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Add custom webpack rules if needed
     return config;
   },
-  
+
   // Headers for better security and performance
   async headers() {
     return [
@@ -52,7 +53,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  
+
   // Redirects for better SEO
   async redirects() {
     return [
