@@ -23,10 +23,10 @@ import type { Car as CarType } from "@/lib/api/cars"
 
 interface CarsTableProps {
   cars: CarType[]
-  onEdit: (car: CarType) => void
-  onMarkSold: (car: CarType) => void
-  onDelete: (carId: string) => void
-  onManageExpenses: (car: CarType) => void
+  onEdit?: (car: CarType) => void
+  onMarkSold?: (car: CarType) => void
+  onDelete?: (carId: string) => void
+  onManageExpenses?: (car: CarType) => void
 }
 
 export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses }: CarsTableProps) {
@@ -62,7 +62,9 @@ export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses
                 <TableHead>Purchase Price</TableHead>
                 <TableHead>Purchase Date</TableHead>
                 <TableHead>Status</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                {(onEdit || onMarkSold || onDelete || onManageExpenses) && (
+                  <TableHead className="text-right">Actions</TableHead>
+                )}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -84,9 +86,9 @@ export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses
                   <TableCell>
                     <div className="flex items-center gap-1 text-sm">
                       <DollarSign className="size-3" />
-                      {car.purchase_price.toLocaleString('en-US', { 
+                      {car.purchase_price.toLocaleString('en-US', {
                         minimumFractionDigits: 2,
-                        maximumFractionDigits: 2 
+                        maximumFractionDigits: 2
                       })}
                     </div>
                   </TableCell>
@@ -97,11 +99,11 @@ export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses
                     </div>
                   </TableCell>
                   <TableCell>
-                    <Badge 
+                    <Badge
                       variant={car.status === "IN_STOCK" ? "default" : "secondary"}
                       className={
-                        car.status === "IN_STOCK" 
-                          ? "bg-primary text-primary-foreground" 
+                        car.status === "IN_STOCK"
+                          ? "bg-primary text-primary-foreground"
                           : "bg-secondary"
                       }
                     >
@@ -113,72 +115,86 @@ export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses
                       </div>
                     )}
                   </TableCell>
-                  <TableCell className="text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      {car.status === "SOLD" ? (
-                        <>
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => onManageExpenses(car)}
-                            className="hover:bg-blue-500/10 hover:text-blue-600"
-                            title="View Expenses"
-                          >
-                            <Receipt className="size-4" />
-                          </Button>
-                          
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => onEdit(car)}
-                            className="hover:bg-primary/10 hover:text-primary"
-                            title="View Details"
-                          >
-                            <Eye className="size-4" />
-                          </Button>
-                        </>
-                      ) : (
-                        <>
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => onManageExpenses(car)}
-                            className="hover:bg-blue-500/10 hover:text-blue-600"
-                            title="Manage Expenses"
-                          >
-                            <Receipt className="size-4" />
-                          </Button>
-                          
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => onEdit(car)}
-                            className="hover:bg-primary/10 hover:text-primary"
-                          >
-                            <Edit className="size-4" />
-                          </Button>
-                          
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => onMarkSold(car)}
-                            className="hover:bg-green-500/10 hover:text-green-600"
-                          >
-                            <DollarSign className="size-4" />
-                          </Button>
-                          
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => onDelete(car.id)}
-                            className="hover:bg-destructive/10 hover:text-destructive"
-                          >
-                            <Trash2 className="size-4" />
-                          </Button>
-                        </>
-                      )}
-                    </div>
-                  </TableCell>
+                  {(onEdit || onMarkSold || onDelete || onManageExpenses) && (
+                    <TableCell className="text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        {car.status === "SOLD" ? (
+                          <>
+                            {onManageExpenses && (
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => onManageExpenses(car)}
+                                className="hover:bg-blue-500/10 hover:text-blue-600"
+                                title="View Expenses"
+                              >
+                                <Receipt className="size-4" />
+                              </Button>
+                            )}
+
+                            {onEdit && (
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => onEdit(car)}
+                                className="hover:bg-primary/10 hover:text-primary"
+                                title="View Details"
+                              >
+                                <Eye className="size-4" />
+                              </Button>
+                            )}
+                          </>
+                        ) : (
+                          <>
+                            {onManageExpenses && (
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => onManageExpenses(car)}
+                                className="hover:bg-blue-500/10 hover:text-blue-600"
+                                title="Manage Expenses"
+                              >
+                                <Receipt className="size-4" />
+                              </Button>
+                            )}
+
+                            {onEdit && (
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => onEdit(car)}
+                                className="hover:bg-primary/10 hover:text-primary"
+                              >
+                                <Edit className="size-4" />
+                              </Button>
+                            )}
+
+                            {onMarkSold && (
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => onMarkSold(car)}
+                                className="hover:bg-green-500/10 hover:text-green-600"
+                              >
+                                <DollarSign className="size-4" />
+                              </Button>
+                            )}
+
+                            {onDelete && (
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => onDelete(car.id)}
+                                className="hover:bg-destructive/10 hover:text-destructive"
+                              >
+                                <Trash2 className="size-4" />
+                              </Button>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    </TableCell>
+                  )}
                 </TableRow>
               ))}
             </TableBody>
