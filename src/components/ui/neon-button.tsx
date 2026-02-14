@@ -50,7 +50,7 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
                 <Link
                     href={href}
                     className={cn(buttonVariants({ variant, size }), className)}
-                    {...props as any}
+                    {...(props as React.ComponentProps<typeof Link>)}
                 >
                     {content}
                 </Link>
