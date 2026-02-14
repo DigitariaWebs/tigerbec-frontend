@@ -115,7 +115,7 @@ export function ContactSection() {
                             <RoundedButton 
                                 size="lg" 
                                 href="mailto:info@tigerbecars.ca" 
-                                variant="outline"
+                                variant="default"
                                 className="flex-1"
                             >
                                 <Send className="mr-2 h-5 w-5" />

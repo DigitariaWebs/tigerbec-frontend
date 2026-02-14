@@ -44,8 +44,22 @@ const CardCurtainReveal = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ children, className, ...props }, ref) => {
   const [isMouseIn, setIsMouseIn] = React.useState(false)
-  const handleMouseEnter = React.useCallback(() => setIsMouseIn(true), [])
-  const handleMouseLeave = React.useCallback(() => setIsMouseIn(false), [])
+  const isTouchDevice = React.useRef(false)
+
+  const handleMouseEnter = React.useCallback(() => {
+    if (!isTouchDevice.current) setIsMouseIn(true)
+  }, [])
+  const handleMouseLeave = React.useCallback(() => {
+    if (!isTouchDevice.current) setIsMouseIn(false)
+  }, [])
+  const handleTouchStart = React.useCallback(() => {
+    isTouchDevice.current = true
+  }, [])
+  const handleClick = React.useCallback(() => {
+    if (isTouchDevice.current) {
+      setIsMouseIn((prev) => !prev)
+    }
+  }, [])
 
   return (
     <CardCurtainRevealContext.Provider value={{ isMouseIn }}>
@@ -55,8 +69,11 @@ const CardCurtainReveal = React.forwardRef<
           "relative flex flex-col gap-2 overflow-hidden",
           className
         )}
+        data-active={isMouseIn || undefined}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onClick={handleClick}
         {...props}
       >
         {children}

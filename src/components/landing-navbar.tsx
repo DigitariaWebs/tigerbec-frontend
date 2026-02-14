@@ -136,7 +136,7 @@ export function LandingNavbar() {
             {/* Mobile Navbar - Fixed at bottom */}
             <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden pointer-events-none">
                 <div className="container mx-auto px-4 pb-4">
-                    <nav className="pointer-events-auto flex items-center justify-around gap-1 rounded-full border px-2 py-2 shadow-lg backdrop-blur-xl bg-background/80 dark:bg-background/25 border-border/50 dark:border-border/60">
+                    <nav className="pointer-events-auto flex items-center justify-around gap-0.5 rounded-full border px-1.5 py-1.5 shadow-lg backdrop-blur-xl bg-background/80 dark:bg-background/25 border-border/50 dark:border-border/60">
                         {navItems.map((item) => {
                             const Icon = item.icon
                             const isActive = activeTab === item.name
@@ -147,13 +147,13 @@ export function LandingNavbar() {
                                     href={item.url}
                                     onClick={() => setActiveTab(item.name)}
                                     className={cn(
-                                        "relative cursor-pointer flex flex-col items-center gap-1 px-3 py-2 rounded-full transition-colors",
+                                        "relative cursor-pointer flex flex-col items-center gap-0.5 px-2.5 py-1.5 rounded-full transition-colors",
                                         "text-foreground/90 hover:text-primary",
                                         isActive && "bg-muted text-primary",
                                     )}
                                 >
-                                    <Icon size={20} strokeWidth={2.5} />
-                                    <span className="text-xs font-medium">{item.name}</span>
+                                    <Icon size={18} strokeWidth={2.5} />
+                                    <span className="text-[10px] font-medium leading-tight">{item.name}</span>
                                     {isActive && (
                                         <motion.div
                                             layoutId="lamp-mobile"
@@ -174,7 +174,7 @@ export function LandingNavbar() {
             </div>
 
             {/* Mobile Header - Logo and Actions */}
-            <header className="fixed top-0 left-0 right-0 z-40 md:hidden pointer-events-none">
+            <header className="fixed top-0 left-0 right-0 z-40 md:hidden pointer-events-none bg-background/80 backdrop-blur-xl border-b border-border/30">
                 <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                     <Link href="/" className="pointer-events-auto flex items-center">
                         <img

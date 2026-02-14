@@ -46,11 +46,13 @@ const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPro
         );
 
         if (href) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const { type, ...linkSafeProps } = props;
             return (
                 <Link
                     href={href}
                     className={cn(buttonVariants({ variant, size }), className)}
-                    {...(props as React.ComponentProps<typeof Link>)}
+                    {...(linkSafeProps as Omit<React.ComponentProps<typeof Link>, 'href'>)}
                 >
                     {content}
                 </Link>

@@ -64,14 +64,14 @@ export function CarCard({
 
       <CardCurtainRevealBody className="relative z-10 flex flex-col justify-end">
         {/* Initial View - Car Name, Year, Price */}
-        <CardCurtainRevealTitle className="relative z-10 text-2xl font-bold tracking-tight text-white group-hover:text-gray-900 dark:group-hover:text-white drop-shadow-lg group-hover:drop-shadow-none transition-colors duration-300">
+        <CardCurtainRevealTitle className="relative z-10 text-2xl font-bold tracking-tight text-white group-hover:text-gray-900 group-data-[active]:text-gray-900 dark:group-hover:text-white dark:group-data-[active]:text-white drop-shadow-lg group-hover:drop-shadow-none group-data-[active]:drop-shadow-none transition-colors duration-300">
           {brand} {model}
           <br />
           <span className="text-lg font-medium">{year}</span>
         </CardCurtainRevealTitle>
 
         <div className="relative z-10 mt-2 mb-4">
-          <span className="text-3xl font-bold text-white group-hover:text-gray-900 dark:group-hover:text-white drop-shadow-lg group-hover:drop-shadow-none transition-colors duration-300">
+          <span className="text-3xl font-bold text-white group-hover:text-gray-900 group-data-[active]:text-gray-900 dark:group-hover:text-white dark:group-data-[active]:text-white drop-shadow-lg group-hover:drop-shadow-none group-data-[active]:drop-shadow-none transition-colors duration-300">
             {formatPrice(price)}
           </span>
         </div>

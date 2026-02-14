@@ -28,12 +28,11 @@ type StickyFooterProps = React.ComponentProps<'footer'>;
 export function StickyFooter({ className, ...props }: StickyFooterProps) {
 	return (
 		<footer
-			className={cn('relative h-[720px] w-full', className)}
-			style={{ clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
+			className={cn('relative w-full md:h-[720px] md:[clip-path:polygon(0%_0,100%_0%,100%_100%,0_100%)]', className)}
 			{...props}
 		>
-			<div className="fixed bottom-0 h-[720px] w-full">
-				<div className="sticky top-[calc(100vh-720px)] h-full overflow-y-auto">
+			<div className="w-full md:fixed md:bottom-0 md:h-[720px]">
+				<div className="md:sticky md:top-[calc(100vh-720px)] md:h-full overflow-y-auto">
 					<div className="relative flex size-full flex-col justify-between gap-5 border-t px-4 py-8 md:px-12">
 						<div
 							aria-hidden
@@ -43,8 +42,8 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
 							<div className="bg-[radial-gradient(50%_50%_at_50%_50%,--theme(--color-foreground/.04)_0,--theme(--color-foreground/.01)_80%,transparent_100%)] absolute top-0 left-0 h-320 w-60 [translate:5%_-50%] -rotate-45 rounded-full" />
 							<div className="bg-[radial-gradient(50%_50%_at_50%_50%,--theme(--color-foreground/.04)_0,--theme(--color-foreground/.01)_80%,transparent_100%)] absolute top-0 left-0 h-320 w-60 -translate-y-87.5 -rotate-45 rounded-full" />
 						</div>
-						<div className="mt-10 flex flex-col gap-8 md:flex-row xl:mt-0">
-							<AnimatedContainer className="w-full max-w-sm min-w-2xs space-y-4">
+						<div className="mt-6 flex flex-col gap-6 md:mt-10 md:flex-row md:gap-8 xl:mt-0">
+							<AnimatedContainer className="w-full md:max-w-sm md:min-w-2xs space-y-4">
 							<div className="flex items-center gap-3">
 								<Image
 									src={assets.logo}
@@ -69,32 +68,34 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
 									))}
 								</div>
 							</AnimatedContainer>
-							{footerLinkGroups.map((group, index) => (
-								<AnimatedContainer
-									key={group.label}
-									delay={0.1 + index * 0.1}
-									className="w-full"
-								>
-									<div className="mb-10 md:mb-0">
-										<h3 className="text-sm uppercase font-semibold">{group.label}</h3>
-										<ul className="text-muted-foreground mt-4 space-y-2 text-sm md:text-xs lg:text-sm">
-											{group.links.map((link) => (
-												<li key={link.title}>
-													<a
-														href={link.href}
-														className="hover:text-foreground inline-flex items-center transition-all duration-300"
-													>
-														{link.icon && <link.icon className="me-1 size-4" />}
-														{link.title}
-													</a>
-												</li>
-											))}
-										</ul>
-									</div>
-								</AnimatedContainer>
-							))}
+							<div className="grid grid-cols-2 gap-x-4 gap-y-6 md:contents">
+								{footerLinkGroups.map((group, index) => (
+									<AnimatedContainer
+										key={group.label}
+										delay={0.1 + index * 0.1}
+										className="w-full"
+									>
+										<div className="mb-0 md:mb-0">
+											<h3 className="text-sm uppercase font-semibold">{group.label}</h3>
+											<ul className="text-muted-foreground mt-3 space-y-1.5 text-xs md:mt-4 md:space-y-2 md:text-xs lg:text-sm">
+												{group.links.map((link) => (
+													<li key={link.title}>
+														<a
+															href={link.href}
+															className="hover:text-foreground inline-flex items-center transition-all duration-300"
+														>
+															{link.icon && <link.icon className="me-1 size-4" />}
+															{link.title}
+														</a>
+													</li>
+												))}
+											</ul>
+										</div>
+									</AnimatedContainer>
+								))}
+							</div>
 						</div>
-						<div className="text-muted-foreground flex flex-col items-center justify-between gap-2 border-t pt-2 text-sm md:flex-row">
+						<div className="text-muted-foreground flex flex-col items-center justify-between gap-2 border-t pt-4 pb-16 md:pb-2 text-xs md:text-sm md:flex-row">
 							<p>© 2026 Tiger Be Cars. Tous droits réservés.</p>
 							<p>11760 5e Avenue, Montréal, QC H1E 2X4</p>
 						</div>
