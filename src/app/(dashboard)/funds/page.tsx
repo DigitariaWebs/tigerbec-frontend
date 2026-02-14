@@ -183,13 +183,20 @@ export default function FundsPage() {
                 <TableBody>
                   {requests.map((request) => {
                     const StatusIcon = statusConfig[request.status].icon
+                    const isWithdrawal =
+                      request.amount < 0 ||
+                      (typeof request.notes === 'string' &&
+                        request.notes.trim().toUpperCase().startsWith('[WITHDRAWAL]'))
+                    const displayAmount = isWithdrawal ? -Math.abs(request.amount) : request.amount
                     return (
                       <TableRow key={request.id}>
                         <TableCell className="font-medium">
-                          ${request.amount.toLocaleString('en-US', {
+                          <span className={isWithdrawal ? "text-red-600" : undefined}>
+                            ${displayAmount.toLocaleString('en-US', {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2
                           })}
+                          </span>
                         </TableCell>
                         <TableCell>
                           <Badge 

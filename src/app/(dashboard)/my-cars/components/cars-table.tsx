@@ -24,12 +24,11 @@ import type { Car as CarType } from "@/lib/api/cars"
 interface CarsTableProps {
   cars: CarType[]
   onEdit?: (car: CarType) => void
-  onMarkSold?: (car: CarType) => void
   onDelete?: (carId: string) => void
   onManageExpenses?: (car: CarType) => void
 }
 
-export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses }: CarsTableProps) {
+export function CarsTable({ cars, onEdit, onDelete, onManageExpenses }: CarsTableProps) {
   if (cars.length === 0) {
     return (
       <Card>
@@ -62,7 +61,7 @@ export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses
                 <TableHead>Purchase Price</TableHead>
                 <TableHead>Purchase Date</TableHead>
                 <TableHead>Status</TableHead>
-                {(onEdit || onMarkSold || onDelete || onManageExpenses) && (
+                {(onEdit || onDelete || onManageExpenses) && (
                   <TableHead className="text-right">Actions</TableHead>
                 )}
               </TableRow>
@@ -115,7 +114,7 @@ export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses
                       </div>
                     )}
                   </TableCell>
-                  {(onEdit || onMarkSold || onDelete || onManageExpenses) && (
+                  {(onEdit || onDelete || onManageExpenses) && (
                     <TableCell className="text-right">
                       <div className="flex items-center justify-end gap-2">
                         {car.status === "SOLD" ? (
@@ -166,17 +165,6 @@ export function CarsTable({ cars, onEdit, onMarkSold, onDelete, onManageExpenses
                                 className="hover:bg-primary/10 hover:text-primary"
                               >
                                 <Edit className="size-4" />
-                              </Button>
-                            )}
-
-                            {onMarkSold && (
-                              <Button
-                                variant="ghost"
-                                size="icon"
-                                onClick={() => onMarkSold(car)}
-                                className="hover:bg-green-500/10 hover:text-green-600"
-                              >
-                                <DollarSign className="size-4" />
                               </Button>
                             )}
 

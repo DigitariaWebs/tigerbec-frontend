@@ -22,10 +22,11 @@ import { settingsApi } from "@/lib/api/settings"
 interface MarkAsSoldModalProps {
   isOpen: boolean
   onClose: () => void
+  onSuccess?: () => void
   car: Car
 }
 
-export function MarkAsSoldModal({ isOpen, onClose, car }: MarkAsSoldModalProps) {
+export function MarkAsSoldModal({ isOpen, onClose, onSuccess, car }: MarkAsSoldModalProps) {
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     sale_price: "",
@@ -78,6 +79,7 @@ export function MarkAsSoldModal({ isOpen, onClose, car }: MarkAsSoldModalProps) 
         sale_date: formData.sale_date,
       })
       
+      onSuccess?.()
       onClose()
     } catch (error) {
       console.error("Failed to mark car as sold:", error)

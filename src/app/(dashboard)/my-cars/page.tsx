@@ -5,6 +5,7 @@ import { carsApi, type Car } from "@/lib/api/cars"
 import { inventoryRequestsApi, type InventoryRequest } from "@/lib/api/inventory-requests"
 import { CarsTable } from "./components/cars-table"
 import { RequestsTable } from "./components/requests-table"
+import { CarExpensesModal } from "./components/car-expenses-modal"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Button } from "@/components/ui/button"
 
@@ -13,6 +14,7 @@ export default function MyCarsPage() {
   const [requests, setRequests] = useState<InventoryRequest[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [selectedCarForExpenses, setSelectedCarForExpenses] = useState<Car | null>(null)
 
   useEffect(() => {
     loadData()
@@ -81,7 +83,21 @@ export default function MyCarsPage() {
       {/* Cars Table - Read Only */}
       <CarsTable
         cars={cars}
+        onManageExpenses={(car) => setSelectedCarForExpenses(car)}
       />
+
+      {selectedCarForExpenses && (
+        <CarExpensesModal
+          open={!!selectedCarForExpenses}
+          onOpenChange={(open) => {
+            if (!open) setSelectedCarForExpenses(null)
+          }}
+          carId={selectedCarForExpenses.id}
+          carName={`${selectedCarForExpenses.year} ${selectedCarForExpenses.make || ""} ${selectedCarForExpenses.model}`.trim()}
+          purchasePrice={selectedCarForExpenses.purchase_price}
+          carStatus={selectedCarForExpenses.status}
+        />
+      )}
     </div>
   )
 }

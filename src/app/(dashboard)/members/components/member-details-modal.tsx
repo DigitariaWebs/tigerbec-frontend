@@ -211,7 +211,7 @@ export function UserDetailsModal({ userId, open, onOpenChange }: UserDetailsModa
                         <div className="flex-1 space-y-2">
                           <div className="flex items-center justify-between">
                             <p className="font-medium">{car.year} {car.model}</p>
-                            <Badge variant={car.status === 'sold' ? 'default' : 'secondary'}>
+                            <Badge variant={car.status === 'SOLD' ? 'default' : 'secondary'}>
                               {car.status}
                             </Badge>
                           </div>
