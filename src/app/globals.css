@@ -44,23 +44,24 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.985 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --primary: oklch(0.769 0.188 70.08);
+  /* #f2ab30 */
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.96 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.96 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -84,8 +85,9 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.769 0.188 70.08);
+  /* #f2ab30 */
+  --primary-foreground: oklch(0.145 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -115,6 +117,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
@@ -123,7 +126,8 @@
 }
 
 /* Ensure consistent font rendering across different DPI levels */
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
   body {
     -webkit-font-smoothing: subpixel-antialiased;
   }
@@ -137,13 +141,14 @@
 
 /* Fix for right-side inset variant support */
 @media (min-width: 768px) {
+
   /* Right sidebar inset variant - margin adjustments */
-  [data-side="right"][data-variant="inset"] ~ [data-slot="sidebar-inset"] {
+  [data-side="right"][data-variant="inset"]~[data-slot="sidebar-inset"] {
     margin-right: 0 !important;
   }
 
   /* Right sidebar inset variant - collapsed state margin */
-  [data-side="right"][data-variant="inset"][data-state="collapsed"] ~ [data-slot="sidebar-inset"] {
+  [data-side="right"][data-variant="inset"][data-state="collapsed"]~[data-slot="sidebar-inset"] {
     margin-right: 0.5rem !important;
   }
 }
@@ -158,8 +163,10 @@ html {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(-144rem); /* 12 items * 12rem = 144rem */
+    transform: translateX(-144rem);
+    /* 12 items * 12rem = 144rem */
   }
 }
 

@@ -1,0 +1,22 @@
+export const assets = {
+    logo: '/Logo.avif',
+    favicon: '/favicon.png',
+    heroVideo: '/hero.mp4',
+    aboutSection: '/AboutSection.avif',
+    dashboard: '/dashboard.mp4',    galleryImages: [
+        "/gal1.avif",
+        "/gal2.avif",
+        "/gal3.avif",
+        "/gal6.avif",   
+        "/gal5.avif",
+        "/gal4.avif",
+        "/gal7.avif",
+        "/gal8.avif",
+        "/gal9.avif",
+        "/gal10.avif",
+        "/gal11.avif",
+        "/gal12.avif",
+        "/gal13.avif",
+        "/gal14.avif",
+        "/gal15.avif",
+    ],} as const;
